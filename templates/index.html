@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Medical Insurance Prediction</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/image.jpg">
+    <link rel="stylesheet" href="" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 35px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        select {
+            width: 100%; /* Make the select element full width */
+            height: 40px; /* Adjust the height as needed */
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <center><h1 id="h1">Medical Insurance Prediction</h1></center>
+
+<br>
+<br>
+
+    <form action="/predict_charges" method="POST">
+        <label for="age">Age:</label>
+        <input type="text" id="age"  placeholder="Enter your age" name="age" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            
+        </select>
+
+        <label for="bmi">BMI:</label>
+        <input type="text" id="bmi" placeholder="Enter your bmi" name="bmi" required>
+
+        <label for="children">Children:</label>
+        <input type="text" id="children" placeholder="Enter your number of children" name="children" required>
+
+        <label for="smoker">Smoker:</label>
+        <select id="smoker" placeholder="Enter your gender" name="smoker" required>
+            <option value="">Select</option>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+            
+        </select>
+        
+        <label for="region">Region:</label>
+        <select id="region" name="region" required>
+            <option value="">Select region</option>
+            <option value="northeast">Northeast</option>
+            <option value="northwest">Northwest</option>
+            <option value="northeast">Southeast</option>
+            <option value="3">Southwest</option>
+            
+        </select>
+        
+        
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+
+        <br>
+        <center><label for="charges">Charges:</label>
+        {{charges}}</center>
+    </form>
+    <script src="" async defer></script>
+</body>
+</html>
